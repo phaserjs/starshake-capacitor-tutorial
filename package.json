@@ -1,0 +1,38 @@
+{
+  "name": "starshake",
+  "productName": "Starshake",
+  "main": "index.html",
+  "type": "module",
+  "window": {
+    "title": "Generic - by Pello",
+    "width": 800,
+    "height": 600,
+    "fullscreen": false,
+    "toolbar": false,
+    "icon": "customIcon.png"
+  },
+  "version": "0.0.1",
+  "description": "Generic game for jam",
+
+  "repository": {
+    "url": "https://github.com/phaserjs/phaser-by-example"
+  },
+  "license": "MIT",
+  "keywords": [
+    "phaser",
+    "games",
+    "book",
+    "pello"
+  ],
+  "scripts": {
+    "dev": "vite --config vite/config.dev.mjs",
+    "build": "vite build --config vite/config.prod.mjs"
+  },
+  "devDependencies": {
+      "terser": "^5.28.1",
+      "vite": "^5.1.4"
+  },
+  "dependencies": {
+    "phaser": "^3.80.1"
+  }
+}
