@@ -21,6 +21,12 @@ export default class Splash extends Phaser.Scene {
       this
     );
 
+    // matt
+    // On mobile, tapping the screen starts the game
+    this.input.on('pointerup', function(pointer){
+      this.transitionToChange();
+  }, this);
+
     this.playMusic();
   }
 

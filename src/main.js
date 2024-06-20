@@ -1,4 +1,5 @@
 import Phaser from "phaser";
+import { AUTO, Scale } from "phaser";
 import Bootloader from "./scenes/bootloader";
 import Outro from "./scenes/outro";
 import Splash from "./scenes/splash";
@@ -6,11 +7,12 @@ import Transition from "./scenes/transition";
 import Game from "./scenes/game";
 
 const config = {
-  width: 1000,
-  height: 800,
+  type: AUTO,
   scale: {
-    mode: Phaser.Scale.FIT,
-    autoCenter: Phaser.Scale.CENTER_BOTH,
+    mode: Scale.RESIZE,
+    width: window.innerWidth * window.devicePixelRatio,
+    autoCenter: Scale.CENTER_BOTH,
+    height: window.innerHeight * window.devicePixelRatio
   },
   autoRound: false,
   parent: "contenedor",

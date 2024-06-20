@@ -128,11 +128,7 @@ class Player extends Phaser.GameObjects.Sprite {
     }
 
     // matt
-    //this.scene.time.delayedCall(3000, () => this.shoot(), null, this);
-    //if (Phaser.Input.Keyboard.JustDown(this.SPACE)) {
-      //this.shoot();
-    //}
-    
+    // Continually shoot bullets every 200 ms
     if (this.nextShotTime < Date.now())
       {
         this.nextShotTime = Date.now() + 200;
