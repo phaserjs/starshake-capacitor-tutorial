@@ -119,15 +119,19 @@ export default class Splash extends Phaser.Scene {
   /*
     Here we add the instructions to the scene.
     */
+  // matt
   showInstructions() {
     this.add
-      .bitmapText(this.center_width, 450, "wendy", "Arrows to move", 60)
+      .bitmapText(this.center_width, 450, "wendy", 
+        this.sys.game.device.os.desktop ? "Arrows to move" : "Move by dragging spaceship", 60)
       .setOrigin(0.5)
       .setDropShadow(3, 4, 0x222222, 0.7);
-    this.add
-      .bitmapText(this.center_width, 500, "wendy", "SPACE to shoot", 60)
-      .setOrigin(0.5)
-      .setDropShadow(3, 4, 0x222222, 0.7);
+    if (this.sys.game.device.os.desktop) {
+      this.add
+        .bitmapText(this.center_width, 500, "wendy", "SPACE to shoot", 60)
+        .setOrigin(0.5)
+        .setDropShadow(3, 4, 0x222222, 0.7);
+    }
     this.add
       .sprite(this.center_width - 95, 598, "pello_logo")
       .setOrigin(0.5)
@@ -138,13 +142,13 @@ export default class Splash extends Phaser.Scene {
       .sprite(this.center_width - 100, 590, "pello_logo")
       .setOrigin(0.5)
       .setScale(0.3);
-
     this.add
       .bitmapText(this.center_width + 30, 590, "wendy", "PELLO", 50)
       .setOrigin(0.5)
       .setDropShadow(3, 4, 0x222222, 0.7);
     this.space = this.add
-      .bitmapText(this.center_width, 680, "wendy", "Press SPACE to start", 60)
+      .bitmapText(this.center_width, 680, "wendy", 
+        this.sys.game.device.os.desktop ? "Press SPACE to start" : "Tap screen to start", 60)
       .setOrigin(0.5)
       .setDropShadow(3, 4, 0x222222, 0.7);
     this.tweens.add({
