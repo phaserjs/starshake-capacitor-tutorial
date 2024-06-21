@@ -84,14 +84,8 @@ class Player extends Phaser.GameObjects.Sprite {
 
     // MATT
     this.setInteractive({ draggable: true })
-    .on('dragstart', function(pointer, dragX, dragY){
-      // ...
-    }, this)
     .on('drag', function(pointer, dragX, dragY){
         this.setPosition(dragX, dragY);
-    }, this)
-    .on('dragend', function(pointer, dragX, dragY, dropped){
-        // ...
     }, this);
   }
 

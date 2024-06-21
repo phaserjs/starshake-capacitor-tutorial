@@ -17,12 +17,15 @@ export default class Outro extends Phaser.Scene {
       "were finally wiped out.",
       "Thanks to commander Alva",
       "And the powah of the Plenny Shakes",
-      " - press enter - ",
+      this.sys.game.device.os.desktop ? " - press enter - " : "- tap to continue -",
     ];
     this.showHistory();
     this.showPlayer();
 
     this.input.keyboard.on("keydown-ENTER", this.startSplash, this);
+
+    // mobile
+    this.input.on('pointerup', () => this.startSplash(), this);
   }
 
   /*
