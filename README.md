@@ -1,7 +1,7 @@
 
-# Starshake
+# Starshake Mobile
 
-A *fartastic* adventure
+A *fartastic* adventure updated for mobile deployment using [Capacitor](https://capacitorjs.com).
 
 Bitmap font generator:
 https://snowb.org/
