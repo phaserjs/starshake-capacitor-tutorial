@@ -20,7 +20,7 @@ class Player extends Phaser.GameObjects.Sprite {
     this.shootingPatterns = new ShootingPatterns(this.scene, this.name);
     this.init();
     this.setControls();
-    this.nextShotTime = Date.now(); // matt
+    this.nextShotTime = Date.now();
   }
 
   /*
@@ -82,7 +82,7 @@ class Player extends Phaser.GameObjects.Sprite {
     this.S = this.scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.S);
     this.D = this.scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D);
 
-    // MATT
+    // mobile touch support
     this.setInteractive({ draggable: true })
     .on('drag', function(pointer, dragX, dragY){
         this.setPosition(dragX, dragY);
@@ -121,13 +121,11 @@ class Player extends Phaser.GameObjects.Sprite {
       this.y += 5;
     }
 
-    // matt
     // Continually shoot bullets every 200 ms
-    if (this.nextShotTime < Date.now())
-      {
-        this.nextShotTime = Date.now() + 200;
-        this.shoot();
-      }
+    if (this.nextShotTime < Date.now()) {
+      this.nextShotTime = Date.now() + 200;
+      this.shoot();
+    }
 
     this.scene.trailLayer.add(
       new LightParticle(this.scene, this.x, this.y, 0xffffff, 10)

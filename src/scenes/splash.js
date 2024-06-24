@@ -21,7 +21,6 @@ export default class Splash extends Phaser.Scene {
       this
     );
 
-    // matt
     // On mobile, tapping the screen starts the game
     this.input.on('pointerup', () => this.transitionToChange(), this);
 
@@ -117,7 +116,6 @@ export default class Splash extends Phaser.Scene {
   /*
     Here we add the instructions to the scene.
     */
-  // matt
   showInstructions() {
     this.add
       .bitmapText(this.center_width, 450, "wendy", 

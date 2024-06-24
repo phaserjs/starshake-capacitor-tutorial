@@ -14,7 +14,7 @@ const config = {
     height: window.innerHeight * window.devicePixelRatio
   },
   autoRound: false,
-  parent: "contenedor",
+  parent: "game-container",
   physics: {
     default: "arcade",
     arcade: {
