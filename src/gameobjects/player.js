@@ -122,7 +122,6 @@ class Player extends Phaser.GameObjects.Sprite {
     }
 
     // Continually shoot bullets every 200 ms
-    console.log(timestep);
     this.nextShotTime -= delta;
 
      if (this.nextShotTime < 0) {

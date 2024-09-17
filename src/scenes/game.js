@@ -353,8 +353,8 @@ export default class Game extends Phaser.Scene {
   /*
     The game loop is as simple as this. We update the player and the foes. We also update the background to make it scroll.
     */
-  update() {
-    if (this.player) this.player.update();
+  update(time, delta) {
+    if (this.player) this.player.update(time, delta);
     this.foes.update();
     this.background.tilePositionY -= 10;
   }
