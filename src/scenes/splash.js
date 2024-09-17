@@ -6,8 +6,8 @@ export default class Splash extends Phaser.Scene {
   }
 
   create() {
-    this.width = this.sys.game.config.width;
-    this.height = this.sys.game.config.height;
+    this.width = this.game.config.width;
+    this.height = this.game.config.height;
     this.center_width = this.width / 2;
     this.center_height = this.height / 2;
     this.addBackground();
@@ -119,10 +119,10 @@ export default class Splash extends Phaser.Scene {
   showInstructions() {
     this.add
       .bitmapText(this.center_width, 450, "wendy", 
-        this.sys.game.device.os.desktop ? "Arrows to move" : "Move by dragging spaceship", 60)
+        this.game.device.os.desktop ? "Arrows to move" : "Move by dragging spaceship", 60)
       .setOrigin(0.5)
       .setDropShadow(3, 4, 0x222222, 0.7);
-    if (this.sys.game.device.os.desktop) {
+    if (this.game.device.os.desktop) {
       this.add
         .bitmapText(this.center_width, 500, "wendy", "SPACE to shoot", 60)
         .setOrigin(0.5)
@@ -144,7 +144,7 @@ export default class Splash extends Phaser.Scene {
       .setDropShadow(3, 4, 0x222222, 0.7);
     this.space = this.add
       .bitmapText(this.center_width, 680, "wendy", 
-        this.sys.game.device.os.desktop ? "Press SPACE to start" : "Tap screen to start", 60)
+        this.game.device.os.desktop ? "Press SPACE to start" : "Tap screen to start", 60)
       .setOrigin(0.5)
       .setDropShadow(3, 4, 0x222222, 0.7);
     this.tweens.add({

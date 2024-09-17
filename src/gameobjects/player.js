@@ -20,7 +20,7 @@ class Player extends Phaser.GameObjects.Sprite {
     this.shootingPatterns = new ShootingPatterns(this.scene, this.name);
     this.init();
     this.setControls();
-    this.nextShotTime = Date.now();
+    this.nextShotTime = 200;
   }
 
   /*
@@ -122,10 +122,13 @@ class Player extends Phaser.GameObjects.Sprite {
     }
 
     // Continually shoot bullets every 200 ms
-    if (this.nextShotTime < Date.now()) {
-      this.nextShotTime = Date.now() + 200;
+    console.log(timestep);
+    this.nextShotTime -= delta;
+
+     if (this.nextShotTime < 0) {
+      this.nextShotTime = 200;
       this.shoot();
-    }
+     }
 
     this.scene.trailLayer.add(
       new LightParticle(this.scene, this.x, this.y, 0xffffff, 10)
